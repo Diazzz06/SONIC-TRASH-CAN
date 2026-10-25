@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Juegos de Sonic</title>
+    <style>
+
+        .texto {
+        font-size: 15pt;
+        text-align: center;
+        color: #c62a2a;
+        }
+
+        .texto {
+            text-align: center;
+            align-self: center;
+        
+            }
+
+        body {
+        background: #000611;
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #FFFFFF;
+        text-align: center;
+        }
+
+        .login-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #000611;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14pt;
+            z-index: 999; 
+        }
+
+        .texto {
+            text-align: center;
+            align-self: center;
+        
+            }
+            
+            @keyframes show {
+            from {
+                opacity: 0;
+                scale: 25%;
+            }
+            
+            to {
+                opacity: 1;
+                scale: 100%;
+            }
+            }
+            
+            .texto {
+            view-timeline-name: --image;
+            view-timeline-axis: block;
+            animation-timeline: --image;
+            animation-name: show;
+            animation-range: entry 25% cover 30%;
+            animation-fill-mode: both;
+            }
+            
+            .FUNCIONA {
+            background-color: #D9D9D9;
+            background-size: 100%;
+            text-align: center;
+            }
+            
+            @keyframes show {
+            from {
+                opacity: 0;
+                scale: 25%;
+            }
+            
+            to {
+                opacity: 1;
+                scale: 100%;
+            }
+            }
+            
+            .FUNCIONA {
+            view-timeline-name: --image;
+            view-timeline-axis: block;
+            animation-timeline: --image;
+            animation-name: show;
+            animation-range: entry 25% cover 30%;
+            animation-fill-mode: both;
+            }
+            
+            .img1 {
+            display: inline-block;
+            justify-content: space-between;
+            margin-left: 75pt;
+            margin-top: 60pt;
+            }
+            
+            @keyframes show {
+            from {
+                opacity: 0;
+                scale: 25%;
+            }
+            
+            to {
+                opacity: 1;
+                scale: 100%;
+            }
+            }
+            
+            .img1 {
+            view-timeline-name: --image;
+            view-timeline-axis: block;
+            animation-timeline: --image;
+            animation-name: show;
+            animation-range: entry 25% cover 30%;
+            animation-fill-mode: both;
+            }
+            
+            .img2 {
+            display: inline-block;
+            margin-left: 70pt;
+            margin-bottom: 50pt;
+            }
+            
+            @keyframes show {
+            from {
+                opacity: 0;
+                scale: 25%;
+            }
+            
+            to {
+                opacity: 1;
+                scale: 100%;
+            }
+            }
+            
+            .img2 {
+            view-timeline-name: --image;
+            view-timeline-axis: block;
+            animation-timeline: --image;
+            animation-name: show;
+            animation-range: entry 25% cover 30%;
+            animation-fill-mode: both;
+            }
+
+
+            .comentario {
+                color: #000611;
+                text-decoration: none;
+                padding: 10px;
+                background-color: #FFFFFF;
+                border-radius: 5px;
+                display: inline-block;
+                margin: 0 0.5rem;
+            }
+
+            .comentario:hover {
+                display: inline-block;
+                    margin: 0 0.5rem;
+                text-align: center;
+                align-items: center;
+                background-color: #ddd;
+            }
+    </style>
+</head>
+
+<body>
+    <!-- Botón de Login -->
+    <button id="loginButton" class="login-button" onclick="window.location.href='login.php'">Login</button>
+
+    <body style="background: #000611;">
+  
+        <div>
+        <img 
+          src="Images/IMAGEN FONDO.png" width="100%">
+          </div>
+      <div style="display: flex; gap: 100px; text-align:center;justify-content: center;font-size: 39pt;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+        <p style="color:#FFFFFF">
+        
+        <B>EL MAYOR RECOPILATORIO DE JUEGOS DE SONIC</B>
+        
+      </div>
+      
+    <div>
+      <div style="display: flex; gap: 1px; justify-content: center;font-size: 15pt;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;margin-top: 25pt;">
+        <p style="color:#FFFFFF" class="texto">
+        Esta página se encarga de buscar, probar y publicar enlaces
+        directos de descarga para juegos de sonic que comúnmente son difíciles de encontrar
+          </p>
+    </div>
+    
+      <div>
+        <div style="display: flex; gap: 1px; justify-content: center;font-size: 60pt;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;background-color: #D9D9D9;margin-top: 100pt;">
+           <p style="color:#000611" class="FUNCIONA">
+        <b>¿QUÉ TÍTULO BUSCAS?</b>
+      </div>
+    
+      <style>
+        .contenedor {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          
+        }
+      
+        .grupo1,
+        .grupo2 {
+          margin: 10px;
+          text-align: center;
+          margin-right: 150pt;
+          
+        }
+      
+        .grupo1 img,
+        .grupo2 img {
+          max-width: 100%;
+          height: auto;
+        }
+      </style>
+      </head>
+      <body>
+      
+      <div class="contenedor">
+          <div class="grupo1">
+              <a href="sonicadventure.html">
+                  <img class="img1" src="Images/5f93f983524def3dca464469d2cf9f3e.png" width="500px" height="160pt">
+              </a>
+              <a href="sonicadventure2.html">
+                  <img class="img1" src="Images/Sonic_Adventure_2.png">
+              </a>
+          </div>
+      
+          <div class="grupo2">
+              <a href="sonic2006.html">
+                  <img class="img2" src="Images/Sonic-The-Hedgehog-Logo-2006.png" width="500px" height="250pt">
+              </a>
+              <a href="sonicR.html">
+                  <img class="img2" src="Images/Sonic_R.png"  width="430px" height="280pt">
+              </a>
+          </div>
+      </div>
+      
+
+
+    <a href="comment.php" class="comentario">Ir a comentarios</a>
+    <footer>
+        <div style="display: flex; gap: 1px; justify-content: center;font-size: 15pt;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;margin-top: 30pt;margin-bottom: 50pt;">
+          <p style="color:#FFFFFF" class="texto">
+        Esta página no busca lucrarse con el contenido compartido // 
+        Todos los Derechos Reservados ©2024
+      </p>
+    </footer>
+</body>
+</html>

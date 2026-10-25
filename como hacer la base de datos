@@ -1,0 +1,135 @@
+### 1. Instalar MySQL Workbench
+
+Primero, tener MySQL Workbench instalado (https://dev.mysql.com/downloads/workbench/).
+
+### 2. Iniciar MySQL Workbench
+
+Abre MySQL Workbench y conéctate a tu servidor MySQL:
+
+1. **Inicia MySQL Workbench.**
+2. **Crea una nueva conexión**:
+   - Haz clic en el ícono de "MySQL Connections" para añadir una nueva conexión.
+   - Rellena los detalles de conexión como se muestra a continuación:
+     - **Connection Name**: `login` (puedes darle cualquier nombre)
+     - **Hostname**:  (se deja como esta)
+     - **Port**: (Se deja como esta)
+     - **Username**: `root` (Se deja como esta por defecto)
+     - **Password**: tampoco poner contraseña se deja como esta
+
+3. **Guarda la conexión** y haz clic en "Test Connection" para asegurarte de que los detalles de conexión son correctos. Si todo está bien, haz clic en "OK" para crear la conexión.
+
+### 3. Crear la Base de Datos
+
+Vamos a crear la base de datos que usaremos para el proyecto:
+
+1. **Abre una nueva sesión de SQL**:
+   - Haz clic en el ícono de "Create a new SQL tab" en la barra de herramientas.
+2. **Ejecuta el siguiente comando para crear la base de datos**:
+   ```sql
+   CREATE DATABASE login;
+   ```
+3. **Selecciona la base de datos**:
+   ```sql
+   USE login;
+   ```
+
+### 4. Crear las Tablas
+
+#### Tabla `usuarios`
+
+1. **Crea la tabla `usuarios`**:
+   ```sql
+   CREATE TABLE usuarios (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       username VARCHAR(50) NOT NULL UNIQUE,
+       password VARCHAR(255) NOT NULL
+   );
+   ```
+
+#### Tabla `comentarios`
+
+1. **Crea la tabla `comentarios`**:
+   ```sql
+   CREATE TABLE comentarios (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       user_id INT NOT NULL,
+       comentario TEXT NOT NULL,
+       fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+       FOREIGN KEY (user_id) REFERENCES usuarios(id) ON DELETE CASCADE
+   );
+   ```
+
+#### Tabla `registro_usuarios`
+
+1. **Crea la tabla `registro_usuarios`**:
+   ```sql
+   CREATE TABLE registro_usuarios (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       user_id INT NOT NULL,
+       registro_fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+       FOREIGN KEY (user_id) REFERENCES usuarios(id) ON DELETE CASCADE
+   );
+   ```
+
+### 5. Configurar los Detalles de Conexión en PHP
+
+Asegúrate de que los detalles de conexión en tu archivo `config.php` coincidan con los detalles de tu servidor MySQL:
+
+```php
+<?php
+$servername = "localhost"; // Nombre del servidor
+$username = "root"; // Nombre de usuario de MySQL
+$password = ""; // Contraseña de MySQL (déjalo en blanco si no tienes contraseña)
+$dbname = "login"; // Nombre de la base de datos
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+```
+
+### 7. Verificar la Conexión y el Funcionamiento
+
+1. **Sube tus archivos PHP a tu servidor web (XAMPP, WAMP, etc.).**
+2. **Accede a tu aplicación a través de tu navegador** para verificar que la conexión y las funcionalidades estén funcionando correctamente.
+
+### Resumen de los Archivos PHP y su Funcionalidad
+
+#### Archivo `config.php`
+Este archivo establece la conexión a la base de datos MySQL. Asegúrate de tener los detalles correctos para `servername`, `username`, `password`, y `dbname`.
+
+#### Archivo de Inicio de Sesión (`login.php`)
+Este archivo verifica las credenciales del usuario y lo redirige a la página principal si las credenciales son correctas.
+
+#### Archivo de Registro (`register.php`)
+Este archivo registra a un nuevo usuario en la base de datos y lo redirige a la página principal después del registro exitoso.
+
+#### Estructura de las Tablas
+
+- **Tabla `usuarios`**: almacena información básica de los usuarios, incluyendo su nombre de usuario y contraseña (hash).
+- **Tabla `comentarios`**: almacena comentarios hechos por los usuarios.
+- **Tabla `registro_usuarios`**: almacena eventos de registro de nuevos usuarios.
+
+Si sigues estos pasos, deberías tener un entorno de base de datos configurado correctamente y funcionando con los archivos PHP proporcionados. Si necesitas más ayuda o encuentras algún problema, no dudes en preguntar.
+
+Claro, aquí tienes un mensaje que puedes usar para recordar a la persona que coloque la carpeta del proyecto dentro del directorio de XAMPP:
+
+---
+
+### Importante
+
+Recuerda colocar la carpeta completa del proyecto dentro del directorio `htdocs` de tu instalación de XAMPP. Esto es necesario para que tu servidor web local pueda acceder a los archivos PHP y ejecutarlos correctamente. 
+
+Por defecto, el directorio `htdocs` se encuentra en la siguiente ruta:
+
+- **Windows**: `C:\xampp\htdocs`
+
+Una vez que hayas colocado la carpeta del proyecto en `htdocs`, podrás acceder a tu aplicación a través de tu navegador web utilizando la URL: `http://localhost/nombre_de_tu_proyecto`.
+
+---
+
+Asegúrate de reemplazar `nombre_de_tu_proyecto` con el nombre real de la carpeta de tu proyecto.
